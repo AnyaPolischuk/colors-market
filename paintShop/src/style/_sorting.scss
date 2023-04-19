@@ -1,0 +1,19 @@
+.products__colors {
+  width: 85%;
+}
+
+.products-sorting {
+  margin-top: 55px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.products-sorting__amount {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.products-sorting__list {
+  border: none ;
+}
