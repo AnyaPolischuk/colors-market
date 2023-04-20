@@ -8,11 +8,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Satisfy&display=swap" rel="stylesheet">
   <title>Colors</title>
 </head>
-<body>
+<body class="body">
   <header class="header">
+    <div class="header__cover"></div>
     <nav class="nav">
+      <div class="menu-burger">
+        <span class="menu-burger__line menu-burger__line_first"></span>
+        <span class="menu-burger__line menu-burger__line_second"></span>
+        <span class="menu-burger__line menu-burger__line_third"></span>
+      </div>
       <div class="nav__logo">
-        <img src="./img/icons/logo.png" alt="logo">
+        <img class="nav__logotip" src="./img/icons/logo.png" alt="logo">
       </div>
       <div class="nav__list">
         <ul class="menu">
@@ -21,6 +27,9 @@
             <li class="menu__item"><a href="" class="menu__link">Вдохновение</a></li>
             <li class="menu__item"><a href="" class="menu__link">Советы</a></li>
             <li class="menu__item"><a href="" class="menu__link">Найти магазин</a></li>
+            <li class="menu__item menu__item_mobile"><a href="" class="menu__link">Поиск</a></li>
+            <li class="menu__item menu__item_mobile"><a href="" class="menu__link">Профиль</a></li>
+            <li class="menu__item menu__item_mobile"><a href="" class="menu__link">Избранное</a></li>
         </ul>
     </div>
     <div class="info-panel">
@@ -33,7 +42,7 @@
           <li class="panel-icons__item"><img src="./img/icons/search.png" alt="search"></li>
           <li class="panel-icons__item"><img src="./img/icons/profile.png" alt="profile"></li>
           <li class="panel-icons__item"><img src="./img/icons/heart.png" alt="favorites"></li>
-          <li class="panel-icons__item"><img src="./img/icons/basket.png" alt="basket"></li>
+          <li class="panel-icons__item panel-icons__basket"><img src="./img/icons/basket.png" alt="basket"></li>
       </ul>
       </div>
     </div>
@@ -272,7 +281,7 @@
         <div class="basket-purchase">
           <div class="basket-purchase__sum">
             <p class="basket-purchase__title">Итого</p>
-            <p class="basket-purchase__price">14400p</p>
+            <p class="basket-purchase__price">14 400p</p>
           </div>
           <button class="basket-purchase__btn">Оформить заказ</button>
         </div>

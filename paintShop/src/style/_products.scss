@@ -9,6 +9,19 @@
   width: 284px;
   height: 392px;
   border-bottom: 1px solid $color-grey;
+  @media (min-width: 375px) and (max-width: 1900px) {
+    width: calc(156px + 128 * (100vw - 620px) / 1525);
+    height: calc(270px + 122 * (100vw - 620px) / 1525);
+  }
+}
+
+.product-card__photo {
+  width: 278px;
+  height: 278px;
+  @media (min-width: 375px) and (max-width: 1900px) {
+    width: calc(156px + 122 * (100vw - 620px) / 1525);
+    height: calc(156px + 122 * (100vw - 620px) / 1525);
+  }
 }
 
 .product-card__title {
@@ -33,8 +46,13 @@
   width: 80px;
   height: 32px;
   border-radius: 8px;
-  background: $color-green;
+  background: $color-grey;
   border: none;
   font-size: 25px;
   font-weight: 500;
+  @media (min-width: 375px) and (max-width: 1900px) {
+    width: calc(40px + 40 * (100vw - 620px) / 1525);
+    height: calc(24px + 8 * (100vw - 620px) / 1525);
+    font-size: calc(18px + 7 * (100vw - 620px) / 1525);
+  }
 }

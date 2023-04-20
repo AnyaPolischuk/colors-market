@@ -7,6 +7,12 @@
   background-color: $color-background;
   display: flex;
   flex-direction: column;
+  display: none;
+  z-index: 3;
+}
+
+.basket_active {
+  display: block;
 }
 
 .basket-header {
@@ -31,6 +37,7 @@
   transition: 0.2s all linear;
   &:hover {
     background-color: $color-green;
+    cursor: pointer;
   }
 }
 
@@ -112,6 +119,11 @@
   border: none;
   font-size: 20px;
   font-weight: 500;
+  transition: 0.2s all linear;
+  &:hover {
+    background-color: $color-green;
+    cursor: pointer;
+  }
 }
 
 .basket-card__delete {
@@ -129,14 +141,21 @@
   justify-content: space-between;
   width: 490px;
   margin: 0 auto;
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
 }
 
 .basket-purchase__title {
-
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
 }
 
 .basket-purchase__price {
-
+  font-size: 30px;
+  font-weight: 500;
+  margin: 0;
 }
 
 .basket-purchase__btn {
@@ -145,4 +164,7 @@
   border-radius: 4px;
   border: none;
   background-color: $color-green;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 500;
 }
