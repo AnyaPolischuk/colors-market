@@ -6,12 +6,29 @@
   margin-top: 55px;
   display: flex;
   justify-content: space-between;
+  @media (min-width: 620px) and (max-width: 1200px) {
+    margin-top: 30px;
+  }
 }
 
 .products-sorting__amount {
   text-transform: uppercase;
   font-size: 12px;
   font-weight: 500;
+  @media (max-width: 620px) {
+    display: none;
+  }
+}
+
+.products-sorting__btn {
+  border: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500;
+  background-color: transparent;
+  @media (min-width: 620px) {
+    display: none;
+  }
 }
 
 .products-sorting__list {

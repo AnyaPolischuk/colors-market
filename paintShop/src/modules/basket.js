@@ -1,7 +1,7 @@
 const basketIcon = document.querySelector('.panel-icons__basket');
 const basketCloseItem = document.querySelector('.basket-header__close');
 const basketProducts = document.querySelector('.basket');
-const backgroundDark = document.querySelector('.header__cover');
+export const backgroundDark = document.querySelector('.header__cover');
 
 export function openBasket() {
   basketIcon.addEventListener('click', () => {
