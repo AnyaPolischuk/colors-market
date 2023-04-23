@@ -31,6 +31,55 @@
   }
 }
 
-.products-sorting__list {
-  border: none ;
+.products-sorting__wrapper{
+  width: 280px;
+  cursor: pointer;
+  position: relative;
+  z-index: 4;
+}
+
+.products-sorting__modal{
+  background-color: transparent;
+
+  color: $color-text;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.products-sorting_active {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500;
+  margin-right: 5px;
+}
+
+.products-sorting__list{
+  position: absolute;
+  width: 100%;
+  background-color: $color-background;
+  margin-top: 14px;
+  max-height: 198px;
+  overflow-y: auto;
+  height: 0;
+}
+
+.products-sorting__item{
+  padding: 17px 24px;
+  box-sizing: border-box;
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.products-sorting__item:hover,
+.products-sorting__item.selected{
+  background-color: $color-green;
+}
+
+.products-sorting__list.active{
+  height: 198px;
+  position: absolute;
+  top: -13px;
 }

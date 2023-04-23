@@ -7,7 +7,7 @@
       position: relative;
       cursor: pointer;
       margin-left: 20px;
-      z-index: 4;
+      z-index: 7;
   }
 }
 
@@ -29,8 +29,8 @@
 }
 
 .menu-burger_active {
-  position: absolute;
-  top: 25px;
+  position: fixed;
+  margin-top: 15px;
 }
 
 .menu-burger_active .menu-burger__line_first  {

@@ -51,7 +51,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 3;
+    z-index: 5;
     transform: translateX(-100%);
     transition: 0.1s all linear;
   }
@@ -121,7 +121,7 @@
   top: 0;
   left: 0;
   width: 100vw;
-  height: 1000px;
+  height: 2400px;
   background-color: $color-footer;
   opacity: 0.7;
   z-index: 2;

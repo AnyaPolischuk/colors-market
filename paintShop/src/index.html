@@ -104,23 +104,21 @@
           <div class="products-sorting">
             <p class="products-sorting__amount">15 товаров</p>
             <button class="products-sorting__btn">Фильтры</button>
-            <select class="products-sorting__list" name="sorting">
-              <option class="products-sorting__item" value="1">Сначала дорогие</option>
-              <option class="products-sorting__item" value="2">Сначала недорогие</option>
-              <option class="products-sorting__item" value="3">Сначала популярные</option>
-              <option class="products-sorting__item" value="4">Сначала новые</option>
-            </select>
+
+            <div class="products-sorting__wrapper">
+              <div class="products-sorting__modal">
+                <span class="products-sorting_active">Сначала дорогие</span>
+                <img src="./img/icons/arrow.png" alt="arrow" class="products-sorting__angle"></img>
+              </div>
+              <div class="products-sorting__list">
+                <div class="products-sorting__item">Сначала дорогие</div>
+                <div class="products-sorting__item">Сначала недорогие</div>
+                <div class="products-sorting__item">Сначала популярные</div>
+                <div class="products-sorting__item">Сначала новые</div>
+              </div>
+            </div>
           </div>
           <div class="products-cards">
-            <!-- Карточки генерировать с помощью JS -->
-            <!-- <div class="products-card">
-              <img class="product-card__photo" src="./img/photos/product_1.jpg" alt="product_1">
-              <p class="product-card__title">Краска Wallquest, Brownsone MS90102</p>
-              <div class="products-card__info">
-                <p class="products-card__price">6000 ₽</p>
-                <button class="products-card__btn">+</button>
-              </div>
-            </div> -->
           </div>
       <div class="basket">
         <div class="basket-header">

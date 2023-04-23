@@ -1,10 +1,14 @@
 import { backgroundDark } from "./basket";
 import { renderProductCards } from "./renderProducts";
 import { products } from "../products";
+import { sortProductsBy, sortingSelectedOption } from "./sorting";
 
 const filterBtn = document.querySelector('.products-sorting__btn');
 const filterList = document.querySelector('.products-filter');
 const filterCloseBtn = document.querySelector('.products-filter__close');
+
+export let filteredProducts;
+let notFilteredProducts;
 
 export function openAndCloseFilterList() {
   filterBtn.addEventListener('click', () => {
@@ -30,15 +34,14 @@ export function checkFilters() {
     filter.addEventListener('change', (event) => {
       if (event.currentTarget.checked) {
         filterArrayOfProducts(filter.id);
+        sortProductsBy(sortingSelectedOption);
       } else {
         turnOffFilterArrayOfProducts(filter.id);
+        sortProductsBy(sortingSelectedOption);
       }
     })
   })
 }
-
-let filteredProducts;
-let notFilteredProducts;
 
 function filterArrayOfProducts(parameter) {
   
