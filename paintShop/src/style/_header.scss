@@ -39,6 +39,18 @@
   }
 }
 
+.panel-icons__basket {
+  position: relative;
+}
+
+.panel-icons__amount {
+  position: absolute;
+  top: 4px;
+  left: 8px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
 .nav__list {
   padding-right: 20%;
   @media (max-width: 1350px) {

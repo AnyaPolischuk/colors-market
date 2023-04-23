@@ -1,11 +1,11 @@
 export function renderProductCards(arrayOfCards) {
   const cardsWrapper = document.querySelector('.products-cards');
   cardsWrapper.innerHTML = '';
-  // console.log(arrayOfCards[0].price)
 
   for (let i = 0; i < arrayOfCards.length; i++) {
     const productCard = document.createElement('div');
     productCard.classList.add('products-card');
+    productCard.id = arrayOfCards[i].id;
     cardsWrapper.append(productCard);
 
     const productCardPhoto = document.createElement('img');

@@ -8,6 +8,7 @@ import { renderProductCards } from './modules/renderProducts';
 import { products } from './products';
 import { checkFilters } from './modules/filters';
 import { makeSortingList } from './modules/sorting';
+import { addProductToBasket } from '../src/modules/basket';
 
 
 openBasket();
@@ -16,5 +17,6 @@ openAndCloseFilterList();
 renderProductCards(products);
 checkFilters();
 makeSortingList();
+addProductToBasket();
 
 
