@@ -2,6 +2,7 @@ import { backgroundDark } from "./basket";
 import { renderProductCards } from "./renderProducts";
 import { products } from "../products";
 import { sortProductsBy, sortingSelectedOption } from "./sorting";
+import { addProductToBasket } from "./basket";
 
 const filterBtn = document.querySelector('.products-sorting__btn');
 const filterList = document.querySelector('.products-filter');
@@ -35,9 +36,11 @@ export function checkFilters() {
       if (event.currentTarget.checked) {
         filterArrayOfProducts(filter.id);
         sortProductsBy(sortingSelectedOption);
+        addProductToBasket();
       } else {
         turnOffFilterArrayOfProducts(filter.id);
         sortProductsBy(sortingSelectedOption);
+        addProductToBasket();
       }
     })
   })

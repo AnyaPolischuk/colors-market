@@ -2,6 +2,7 @@ import { backgroundDark } from "./basket";
 import { products } from "../products";
 import { filteredProducts } from "./filters";
 import { renderProductCards } from "./renderProducts";
+import { addProductToBasket } from "./basket";
 
 const modalSorting = document.querySelector(".products-sorting__modal");
 const sortingList = document.querySelector(".products-sorting__list");
@@ -55,4 +56,5 @@ export function makeSortingList() {
       renderProductCards(products);
     }
   }
+  addProductToBasket();
 }

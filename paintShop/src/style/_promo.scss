@@ -50,6 +50,22 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  left: 50%;
+  top: -3%;
+  transform: translateX(-50%);
+  @media (min-width: 1100px) and (max-width: 1700px) {
+    top: -20%;
+  }
+  @media (min-width: 900px) and (max-width: 1100px) {
+    top: -40%;
+  }
+  @media (min-width: 730px) and (max-width: 900px) {
+    top: -60%;
+  }
+  @media (min-width: 600px) and (max-width: 730px) {
+    top: -80%;
+  }
   @media (max-width: 620px) {
     align-items: flex-start;
   }
@@ -59,9 +75,11 @@
   font-size: 72px;
   font-weight: 400;
   margin-bottom: 0;
-  padding-top: 100px;
+  // padding-top: 100px;
+  padding-top: 0;
+  margin-top: 0;
   @media (min-width: 620px) and (max-width: 1900px) {
-    padding-top: calc(10 * (100vw - 620px) / 1280);
+    // padding-top: calc(10 * (100vw - 620px) / 1280);
     font-size: calc(20px + 52 * (100vw - 620px) / 1280);
   }
   @media (max-width: 620px) {
@@ -86,7 +104,7 @@
   }
 }
 
-.promo-slider {
+.swiper-pagination {
   width: 124px;
   height: 32px;
   border-radius: 16px;
@@ -105,24 +123,24 @@
   }
 }
 
-.promo-slider__item {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: $color-background;
-  opacity: 0.2;
-}
+// .promo-slider__item {
+//   width: 6px;
+//   height: 6px;
+//   border-radius: 50%;
+//   background: $color-background;
+//   opacity: 0.2;
+// }
 
-.promo__btn {
-  position: absolute;
-  top: 63%;
-  left: 78%;
-  @media (min-width: 620px) and (max-width: 1900px) {
-    top: calc(100px + 180 * (100vw - 620px) / 1280);
-    width: calc(11px + 11 * (100vw - 620px) / 1280);
-    height: calc(21px + 21 * (100vw - 620px) / 1280);
-  }
-  @media (max-width: 620px) {
-    display: none;
-  }
-}
+// .promo__btn {
+//   position: absolute;
+//   top: 63%;
+//   left: 78%;
+//   @media (min-width: 620px) and (max-width: 1900px) {
+//     top: calc(100px + 180 * (100vw - 620px) / 1280);
+//     width: calc(11px + 11 * (100vw - 620px) / 1280);
+//     height: calc(21px + 21 * (100vw - 620px) / 1280);
+//   }
+//   @media (max-width: 620px) {
+//     display: none;
+//   }
+// }

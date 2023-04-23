@@ -6,6 +6,7 @@ const basketProducts = document.querySelector('.basket');
 export const backgroundDark = document.querySelector('.header__cover');
 const basketCards = document.querySelector('.basket-cards');
 const amountProductsInBasket = document.querySelector('.panel-icons__amount');
+const sumOfProducts = document.querySelector('.basket-purchase__price');
 
 let productsInBasket = [];
 let uniqueProductsInBasket = [];
@@ -26,12 +27,15 @@ export function addProductToBasket() {
 
   addProductBtns.forEach(btn => {
     btn.addEventListener('click', (event) => {
+      //btn.disabled = true;
+
       const selectedCardId = event.currentTarget.closest('.products-card').id;
       const currentProduct = products.find(product => product.id == selectedCardId);
       uniqueProductsInBasket.push(currentProduct);
       productsInBasket.push(currentProduct)
       amountProductsInBasket.innerHTML  = productsInBasket.length;
-      //добавить new Set
+      uniqueProductsInBasket = [...new Set(uniqueProductsInBasket)];
+      
 
       renderProductsInBasket(uniqueProductsInBasket);
       
@@ -42,6 +46,7 @@ export function addProductToBasket() {
 function renderProductsInBasket(productsArray) {
 
   basketCards.innerHTML = '';
+  
 
   for (let i = 0; i < productsArray.length; i++) {
     const basketCard = document.createElement('div');
@@ -101,12 +106,14 @@ function renderProductsInBasket(productsArray) {
     basketCardSetting.append(btnDelete);
   }
 
-  addAndRemoveProducts()
+  addRemoveDeleteProducts();
+  findSum(productsInBasket);
 }
 
-function addAndRemoveProducts() {
+export function addRemoveDeleteProducts() {
   const addBtns = document.querySelectorAll('.basket-card__btn_add');
   const removeBtns = document.querySelectorAll('.basket-card__btn_remove');
+  const deleteBtns = document.querySelectorAll('.basket-card__delete');
   
 
   addBtns.forEach(btn => {
@@ -118,6 +125,7 @@ function addAndRemoveProducts() {
         btn.previousElementSibling.innerHTML = +btn.previousElementSibling.innerHTML + 1;
         //console.log(productsInBasket)
         productsInBasket.push(currentProduct);
+        findSum(productsInBasket);
       }
     })
   })
@@ -132,8 +140,32 @@ function addAndRemoveProducts() {
         const indexOfProduct = productsInBasket.indexOf(currentProduct)
         //console.log(indexOfProduct);
         productsInBasket.splice(indexOfProduct, 1);
+        findSum(productsInBasket);
         //console.log(productsInBasket)
       }
     })
   })
+
+  deleteBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const productId = btn.closest('.basket-card').id;
+      const deletedProduct = btn.closest('.basket-card');
+
+      deletedProduct.innerHTML = '';
+      productsInBasket = productsInBasket.filter(product => product.id != productId);
+      uniqueProductsInBasket = uniqueProductsInBasket.filter(product => product.id != productId); 
+      findSum(productsInBasket); 
+    })
+  })
+}
+
+function findSum(allProducts) {
+  sumOfProducts.innerHTML = '';
+  if (allProducts.length === 0) {
+    sumOfProducts.innerHTML = '0 р';
+  } else {
+    const sum = allProducts.reduce((total, amount) => Number(total) + Number(amount.price), 0); 
+    console.log(sum)
+    sumOfProducts.innerHTML = `${sum} р`;
+  }
 }

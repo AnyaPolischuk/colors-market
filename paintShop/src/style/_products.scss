@@ -59,3 +59,7 @@
     font-size: calc(18px + 7 * (100vw - 620px) / 1525);
   }
 }
+
+.products-card__btn_disabled {
+  background-color: green;
+}
