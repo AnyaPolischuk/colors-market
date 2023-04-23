@@ -35,4 +35,10 @@ export function renderProductCards(arrayOfCards) {
     productCardBtn.innerHTML = '+';
     productCardInfo.append(productCardBtn);
   }
+  renderAmountOfProducts(arrayOfCards);
+}
+
+function renderAmountOfProducts(arrayOfProducts) {
+  const amountOfProducts = document.querySelector('.products-sorting__amount');
+  amountOfProducts.innerHTML = `${arrayOfProducts.length} товаров`;
 }

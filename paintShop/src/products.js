@@ -2,7 +2,7 @@ export const products = [
     {
       "id": 1,
       "title": "Color 1",
-      "description": "Краска Wallquest, Brownsone MS90102",
+      "description": "Краска Wallquest, Brownsone MS90100",
       "price": 6000,
       "new": true,
       "avaliable": 10,
@@ -15,7 +15,7 @@ export const products = [
     {
       "id": 2,
       "title": "Color 2",
-      "description": "Краска Wallquest, Brownsone MS90102",
+      "description": "Краска Wallquest, Brownsone MS90101",
       "price": 4000,
       "new": true,
       "avaliable": 7,
@@ -41,7 +41,7 @@ export const products = [
     {
       "id": 4,
       "title": "Color 4",
-      "description": "Краска Wallquest, Brownsone MS90102",
+      "description": "Краска Wallquest, Brownsone MS90103",
       "price": 6400,
       "new": true,
       "avaliable": 0,
@@ -54,7 +54,7 @@ export const products = [
     {
       "id": 5,
       "title": "Color 5",
-      "description": "Краска Wallquest, Brownsone MS90102",
+      "description": "Краска Wallquest, Brownsone MS90104",
       "price": 1050,
       "new": true,
       "avaliable": 0,
@@ -67,7 +67,7 @@ export const products = [
     {
       "id": 6,
       "title": "Color 6",
-      "description": "Краска Wallquest, Brownsone MS90102",
+      "description": "Краска Wallquest, Brownsone MS90105",
       "price": 9400,
       "new": true,
       "avaliable": 1,
@@ -80,7 +80,7 @@ export const products = [
     {
       "id": 7,
       "title": "Color 7",
-      "description": "Краска Wallquest, Brownsone MS90102",
+      "description": "Краска Wallquest, Brownsone MS90106",
       "price": 4500,
       "new": false,
       "avaliable": 43,
@@ -93,7 +93,7 @@ export const products = [
     {
       "id": 8,
       "title": "Color 8",
-      "description": "Краска Wallquest, Brownsone MS90102",
+      "description": "Краска Wallquest, Brownsone MS90107",
       "price": 3400,
       "new": true,
       "avaliable": 91,
@@ -106,7 +106,7 @@ export const products = [
     {
       "id": 9,
       "title": "Color 9",
-      "description": "Краска Wallquest, Brownsone MS90102",
+      "description": "Краска Wallquest, Brownsone MS90108",
       "price": 2300,
       "new": false,
       "avaliable": 14,
@@ -119,7 +119,7 @@ export const products = [
     {
       "id": 10,
       "title": "Color 10",
-      "description": "Краска Wallquest, Brownsone MS90102",
+      "description": "Краска Wallquest, Brownsone MS90109",
       "price": 6500,
       "new": true,
       "avaliable": 54,
@@ -132,7 +132,7 @@ export const products = [
     {
       "id": 11,
       "title": "Color 11",
-      "description": "Краска Wallquest, Brownsone MS90102",
+      "description": "Краска Wallquest, Brownsone MS90110",
       "price": 7600,
       "new": false,
       "avaliable": 0,
@@ -145,12 +145,12 @@ export const products = [
     {
       "id": 12,
       "title": "Color 12",
-      "description": "Краска Wallquest, Brownsone MS90102",
+      "description": "Краска Wallquest, Brownsone MS90111",
       "price": 3460,
       "new": true,
       "avaliable": 32,
       "contracts": false,
-      "exclusive": true,
+      "exclusive": false,
       "sale": 0,
       "rating": 4,
       "image": './assets/product_12.jpg'
@@ -158,7 +158,7 @@ export const products = [
     {
       "id": 13,
       "title": "Color 13",
-      "description": "Краска Wallquest, Brownsone MS90102",
+      "description": "Краска Wallquest, Brownsone MS90112",
       "price": 7600,
       "new": false,
       "avaliable": 65,
@@ -171,7 +171,7 @@ export const products = [
     {
       "id": 14,
       "title": "Color 14",
-      "description": "Краска Wallquest, Brownsone MS90102",
+      "description": "Краска Wallquest, Brownsone MS90113",
       "price": 3300,
       "new": true,
       "avaliable": 23,
@@ -184,12 +184,12 @@ export const products = [
     {
       "id": 15,
       "title": "Color 15",
-      "description": "Краска Wallquest, Brownsone MS90102",
+      "description": "Краска Wallquest, Brownsone MS90114",
       "price": 2500,
       "new": true,
       "avaliable": 6,
       "contracts": false,
-      "exclusive": true,
+      "exclusive": false,
       "sale": 10,
       "rating": 4.2,
       "image": './assets/product_15.jpg'
