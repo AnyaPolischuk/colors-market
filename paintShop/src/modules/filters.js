@@ -5,6 +5,7 @@ import { sortProductsBy, sortingSelectedOption } from "./sorting";
 import { addProductToBasket } from "./basket";
 import { body, html } from "./burger";
 import { bodyOfPage } from "./basket";
+import { uniqueProductsInBasket } from "./basket";
 
 const filterBtn = document.querySelector('.products-sorting__btn');
 const filterList = document.querySelector('.products-filter');
@@ -43,11 +44,9 @@ export function checkFilters() {
       if (event.currentTarget.checked) {
         filterArrayOfProducts(filter.id);
         sortProductsBy(sortingSelectedOption);
-        addProductToBasket();
       } else {
         turnOffFilterArrayOfProducts(filter.id);
         sortProductsBy(sortingSelectedOption);
-        addProductToBasket();
       }
     })
   })
@@ -72,6 +71,8 @@ function filterArrayOfProducts(parameter) {
     }
     renderProductCards(filteredProducts);
   }
+
+  addDisabledToChosenCards(uniqueProductsInBasket);
 }
 
 function turnOffFilterArrayOfProducts(parameter) {
@@ -80,15 +81,27 @@ function turnOffFilterArrayOfProducts(parameter) {
     notFilteredProducts = products.filter(product => product[parameter] === false);
     filteredProducts = [...filteredProducts, ...notFilteredProducts];
     filteredProducts = Array.from(new Set(filteredProducts))
+
     renderProductCards(filteredProducts);
   }
 
   if (parameter === 'sale' || parameter === 'avaliable') {
     notFilteredProducts = products.filter(product => product[parameter] === 0);
     filteredProducts = [...filteredProducts, ...notFilteredProducts];
-    filteredProducts = Array.from(new Set(filteredProducts))
+    filteredProducts = Array.from(new Set(filteredProducts));
+
     renderProductCards(filteredProducts);
   }
+
+  addDisabledToChosenCards(uniqueProductsInBasket);
+}
+
+export function addDisabledToChosenCards(chosenProducts) {
+  chosenProducts.forEach(item => {
+    let id = item.id;
+    let chosenItem = document.getElementById(id);
+    chosenItem.lastChild.lastChild.disabled = true;
+  })
 }
 
 

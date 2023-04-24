@@ -14,7 +14,7 @@ const amountColorsInBasket = document.querySelector('.basket-products__amount');
 const clearAllBasket = document.querySelector('.basket-products__btn');
 
 let productsInBasket = [];
-let uniqueProductsInBasket = [];
+export let uniqueProductsInBasket = [];
 let heightOfPage;
 
 export function openBasket() {
@@ -38,8 +38,6 @@ export function addProductToBasket() {
 
   addProductBtns.forEach(btn => {
     btn.addEventListener('click', (event) => {
-      
-
       const selectedCardId = event.currentTarget.closest('.products-card').id;
       const currentProduct = products.find(product => product.id == selectedCardId);
       uniqueProductsInBasket.push(currentProduct);
@@ -124,7 +122,6 @@ export function addRemoveDeleteProducts() {
   const addBtns = document.querySelectorAll('.basket-card__btn_add');
   const removeBtns = document.querySelectorAll('.basket-card__btn_remove');
   const deleteBtns = document.querySelectorAll('.basket-card__delete');
-  
 
   addBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -137,7 +134,6 @@ export function addRemoveDeleteProducts() {
         amountProductsInBasket.innerHTML  = productsInBasket.length;
         amountColorsInBasket.innerHTML = `${productsInBasket.length} товаров`;
         findSum(productsInBasket);
-        
       }
     })
   })
@@ -146,12 +142,15 @@ export function addRemoveDeleteProducts() {
     btn.addEventListener('click', () => {
       if (+btn.nextElementSibling.innerHTML > 0) {
         btn.nextElementSibling.innerHTML = +btn.nextElementSibling.innerHTML - 1;
+
         const productId = btn.closest('.basket-card').id;
         const currentProduct = products.find(product => product.id == productId);
         const indexOfProduct = productsInBasket.indexOf(currentProduct)
+
         productsInBasket.splice(indexOfProduct, 1);
         amountProductsInBasket.innerHTML  = productsInBasket.length;
         amountColorsInBasket.innerHTML = `${productsInBasket.length} товаров`;
+
         findSum(productsInBasket);
       }
     })
@@ -167,6 +166,7 @@ export function addRemoveDeleteProducts() {
       uniqueProductsInBasket = uniqueProductsInBasket.filter(product => product.id != productId); 
       amountProductsInBasket.innerHTML  = productsInBasket.length;
       amountColorsInBasket.innerHTML = `${productsInBasket.length} товаров`;
+
       findSum(productsInBasket); 
     })
   })
@@ -177,6 +177,7 @@ export function addRemoveDeleteProducts() {
     basketCards.innerHTML = '';
     amountProductsInBasket.innerHTML  = productsInBasket.length;
     amountColorsInBasket.innerHTML = `${productsInBasket.length} товаров`;
+
     findSum(productsInBasket); 
   })
 
@@ -184,6 +185,7 @@ export function addRemoveDeleteProducts() {
 
 function findSum(allProducts) {
   sumOfProducts.innerHTML = '';
+  
   if (allProducts.length === 0) {
     sumOfProducts.innerHTML = '0 р';
   } else {

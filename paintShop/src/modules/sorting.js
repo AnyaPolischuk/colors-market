@@ -1,10 +1,9 @@
-import { backgroundDark } from "./basket";
 import { products } from "../products";
-import { filteredProducts } from "./filters";
+import { filteredProducts, addDisabledToChosenCards } from "./filters";
 import { renderProductCards } from "./renderProducts";
-import { addProductToBasket } from "./basket";
+import { addProductToBasket, uniqueProductsInBasket, bodyOfPage, backgroundDark } from "./basket";
 import { body, html } from "./burger";
-import { bodyOfPage } from "./basket";
+
 
 const modalSorting = document.querySelector(".products-sorting__modal");
 const sortingList = document.querySelector(".products-sorting__list");
@@ -43,6 +42,7 @@ export function makeSortingList() {
       sortProductsBy(item.innerHTML);
     });
   });
+
 }
 
  export function sortProductsBy(parameter) {
@@ -66,4 +66,5 @@ export function makeSortingList() {
     }
   }
   addProductToBasket();
+  addDisabledToChosenCards(uniqueProductsInBasket);
 }
