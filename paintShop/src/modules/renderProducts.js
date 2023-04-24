@@ -10,9 +10,7 @@ export function renderProductCards(arrayOfCards) {
 
     const productCardPhoto = document.createElement('img');
     productCardPhoto.classList.add('product-card__photo');
-    // TODO: разобраться с путями картинок
-    // productCardPhoto.src = arrayOfCards[i].image;
-    productCardPhoto.src = "https://grad-snab.ru/uploads/product/116/278x278.jpg";
+    productCardPhoto.src = arrayOfCards[i].image;
     productCardPhoto.alt = arrayOfCards[i].title;
     productCard.append(productCardPhoto);
 

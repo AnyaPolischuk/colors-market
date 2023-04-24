@@ -24,7 +24,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     clean: true,
     filename: '[name].[contenthash].js',
-    assetModuleFilename: 'assets/[name][ext]'
+    assetModuleFilename: 'assets/img/[name][ext]'
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -85,8 +85,7 @@ module.exports = {
               webp: {
                 quality: 75
               }
-            }
-          
+            },
           }
         ],
         type: 'asset/resource',

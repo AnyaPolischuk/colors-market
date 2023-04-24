@@ -1,3 +1,19 @@
+import product_1 from './img/photos/product_1.jpg';
+import product_2 from './img/photos/product_2.jpg';
+import product_3 from './img/photos/product_3.jpg';
+import product_4 from './img/photos/product_4.jpg';
+import product_5 from './img/photos/product_5.jpg';
+import product_6 from './img/photos/product_6.jpg';
+import product_7 from './img/photos/product_7.jpg';
+import product_8 from './img/photos/product_8.jpg';
+import product_9 from './img/photos/product_9.jpg';
+import product_10 from './img/photos/product_10.jpg';
+import product_11 from './img/photos/product_11.jpg';
+import product_12 from './img/photos/product_12.jpg';
+import product_13 from './img/photos/product_13.jpg';
+import product_14 from './img/photos/product_14.jpg';
+import product_15 from './img/photos/product_15.jpg';
+
 export const products = [
     {
       "id": 1,
@@ -10,7 +26,7 @@ export const products = [
       "exclusive": true,
       "sale": 5,
       "rating": 4.9,
-      "image": './assets/product_1.jpg'
+      "image": product_1
     }, 
     {
       "id": 2,
@@ -23,7 +39,7 @@ export const products = [
       "exclusive": true,
       "sale": 0,
       "rating": 4.3,
-      "image": './assets/product_2.jpg'
+      "image": product_2
     }, 
     {
       "id": 3,
@@ -36,7 +52,7 @@ export const products = [
       "exclusive": true,
       "sale": 25,
       "rating": 4.1,
-      "image": './assets/product_3.jpg'
+      "image": product_3
     }, 
     {
       "id": 4,
@@ -44,12 +60,12 @@ export const products = [
       "description": "Краска Wallquest, Brownsone MS90103",
       "price": 6400,
       "new": true,
-      "avaliable": 0,
+      "avaliable": 1,
       "contracts": true,
       "exclusive": true,
       "sale": 10,
       "rating": 2.9,
-      "image": './assets/product_4.jpg'
+      "image": product_4
     }, 
     {
       "id": 5,
@@ -57,12 +73,12 @@ export const products = [
       "description": "Краска Wallquest, Brownsone MS90104",
       "price": 1050,
       "new": true,
-      "avaliable": 0,
+      "avaliable": 2,
       "contracts": true,
       "exclusive": true,
       "sale": 0,
       "rating": 3.5,
-      "image": './assets/product_5.jpg'
+      "image": product_5
     }, 
     {
       "id": 6,
@@ -75,7 +91,7 @@ export const products = [
       "exclusive": true,
       "sale": 0,
       "rating": 4.4,
-      "image": './assets/product_6.jpg'
+      "image": product_6
     }, 
     {
       "id": 7,
@@ -88,7 +104,7 @@ export const products = [
       "exclusive": true,
       "sale": 0,
       "rating": 4.5,
-      "image": './assets/product_7.jpg'
+      "image": product_7
     }, 
     {
       "id": 8,
@@ -101,7 +117,7 @@ export const products = [
       "exclusive": true,
       "sale": 0,
       "rating": 5,
-      "image": './assets/product_8.jpg'
+      "image": product_8
     }, 
     {
       "id": 9,
@@ -114,7 +130,7 @@ export const products = [
       "exclusive": true,
       "sale": 5,
       "rating": 4.1,
-      "image": './assets/product_9.jpg'
+      "image": product_9
     }, 
     {
       "id": 10,
@@ -127,7 +143,7 @@ export const products = [
       "exclusive": true,
       "sale": 20,
       "rating": 4.9,
-      "image": './assets/product_10.jpg'
+      "image": product_10
     }, 
     {
       "id": 11,
@@ -135,12 +151,12 @@ export const products = [
       "description": "Краска Wallquest, Brownsone MS90110",
       "price": 7600,
       "new": false,
-      "avaliable": 0,
+      "avaliable": 3,
       "contracts": true,
       "exclusive": true,
       "sale": 15,
       "rating": 3.9,
-      "image": './assets/product_11.jpg'
+      "image": product_11
     }, 
     {
       "id": 12,
@@ -153,7 +169,7 @@ export const products = [
       "exclusive": false,
       "sale": 0,
       "rating": 4,
-      "image": './assets/product_12.jpg'
+      "image": product_12
     }, 
     {
       "id": 13,
@@ -166,7 +182,7 @@ export const products = [
       "exclusive": true,
       "sale": 15,
       "rating": 4.7,
-      "image": './assets/product_13.jpg'
+      "image": product_13
     }, 
     {
       "id": 14,
@@ -179,7 +195,7 @@ export const products = [
       "exclusive": true,
       "sale": 0,
       "rating": 4.9,
-      "image": './assets/product_14.jpg'
+      "image": product_14
     },
     {
       "id": 15,
@@ -192,6 +208,6 @@ export const products = [
       "exclusive": false,
       "sale": 10,
       "rating": 4.2,
-      "image": './assets/product_15.jpg'
+      "image": product_15
     }
   ]

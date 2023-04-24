@@ -1,5 +1,6 @@
 import { products } from "../products";
 import { body, html } from "./burger";
+import btnDeleteIcon from '../img/icons/cross_grey.png';
 
 const basketIcon = document.querySelector('.panel-icons__basket');
 const basketCloseItem = document.querySelector('.basket-header__close');
@@ -9,6 +10,8 @@ const basketCards = document.querySelector('.basket-cards');
 const amountProductsInBasket = document.querySelector('.panel-icons__amount');
 const sumOfProducts = document.querySelector('.basket-purchase__price');
 export const bodyOfPage = document.querySelector('.body');
+const amountColorsInBasket = document.querySelector('.basket-products__amount');
+const clearAllBasket = document.querySelector('.basket-products__btn');
 
 let productsInBasket = [];
 let uniqueProductsInBasket = [];
@@ -35,18 +38,17 @@ export function addProductToBasket() {
 
   addProductBtns.forEach(btn => {
     btn.addEventListener('click', (event) => {
-      //btn.disabled = true;
+      
 
       const selectedCardId = event.currentTarget.closest('.products-card').id;
       const currentProduct = products.find(product => product.id == selectedCardId);
       uniqueProductsInBasket.push(currentProduct);
       productsInBasket.push(currentProduct)
       amountProductsInBasket.innerHTML  = productsInBasket.length;
+      amountColorsInBasket.innerHTML = `${productsInBasket.length} товаров`;
       uniqueProductsInBasket = [...new Set(uniqueProductsInBasket)];
-      
-
       renderProductsInBasket(uniqueProductsInBasket);
-      
+      btn.disabled = true;
     })
   })
 }
@@ -54,9 +56,9 @@ export function addProductToBasket() {
 function renderProductsInBasket(productsArray) {
 
   basketCards.innerHTML = '';
-  
 
   for (let i = 0; i < productsArray.length; i++) {
+  
     const basketCard = document.createElement('div');
     basketCard.classList.add('basket-card');
     basketCard.id = productsArray[i].id;
@@ -68,7 +70,7 @@ function renderProductsInBasket(productsArray) {
   
     const basketCardImg = document.createElement('img');
     basketCardImg.classList.add('basket-card__photo');
-    basketCardImg.src = "https://grad-snab.ru/uploads/product/116/278x278.jpg";
+    basketCardImg.src = productsArray[i].image;
     basketCardImg.alt = productsArray[i].title;
     basketCardInfo.append(basketCardImg);
 
@@ -109,7 +111,7 @@ function renderProductsInBasket(productsArray) {
 
     const btnDelete = document.createElement('img');
     btnDelete.classList.add('basket-card__delete');
-    btnDelete.src = "https://w7.pngwing.com/pngs/1007/1023/png-transparent-trash-cancel-delete-remove-close-cross-ink-alert-icon-thumbnail.png";
+    btnDelete.src = btnDeleteIcon;
     btnDelete.alt = 'delete';
     basketCardSetting.append(btnDelete);
   }
@@ -131,9 +133,11 @@ export function addRemoveDeleteProducts() {
 
       if (+btn.previousElementSibling.innerHTML < currentProduct.avaliable) {
         btn.previousElementSibling.innerHTML = +btn.previousElementSibling.innerHTML + 1;
-        //console.log(productsInBasket)
         productsInBasket.push(currentProduct);
+        amountProductsInBasket.innerHTML  = productsInBasket.length;
+        amountColorsInBasket.innerHTML = `${productsInBasket.length} товаров`;
         findSum(productsInBasket);
+        
       }
     })
   })
@@ -143,13 +147,12 @@ export function addRemoveDeleteProducts() {
       if (+btn.nextElementSibling.innerHTML > 0) {
         btn.nextElementSibling.innerHTML = +btn.nextElementSibling.innerHTML - 1;
         const productId = btn.closest('.basket-card').id;
-        //console.log('productId', productId)
         const currentProduct = products.find(product => product.id == productId);
         const indexOfProduct = productsInBasket.indexOf(currentProduct)
-        //console.log(indexOfProduct);
         productsInBasket.splice(indexOfProduct, 1);
+        amountProductsInBasket.innerHTML  = productsInBasket.length;
+        amountColorsInBasket.innerHTML = `${productsInBasket.length} товаров`;
         findSum(productsInBasket);
-        //console.log(productsInBasket)
       }
     })
   })
@@ -162,9 +165,21 @@ export function addRemoveDeleteProducts() {
       deletedProduct.innerHTML = '';
       productsInBasket = productsInBasket.filter(product => product.id != productId);
       uniqueProductsInBasket = uniqueProductsInBasket.filter(product => product.id != productId); 
+      amountProductsInBasket.innerHTML  = productsInBasket.length;
+      amountColorsInBasket.innerHTML = `${productsInBasket.length} товаров`;
       findSum(productsInBasket); 
     })
   })
+
+  clearAllBasket.addEventListener('click', () => {
+    uniqueProductsInBasket = [];
+    productsInBasket = [];
+    basketCards.innerHTML = '';
+    amountProductsInBasket.innerHTML  = productsInBasket.length;
+    amountColorsInBasket.innerHTML = `${productsInBasket.length} товаров`;
+    findSum(productsInBasket); 
+  })
+
 }
 
 function findSum(allProducts) {
