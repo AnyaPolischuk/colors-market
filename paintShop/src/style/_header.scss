@@ -81,6 +81,9 @@
 } 
 
 .info-panel__phone {
+  &:hover {
+    cursor: pointer;
+  }
   @media (max-width: 1150px) {
     display: none;
   }
@@ -101,6 +104,9 @@
 .panel-icons {
   width: 160px;
   justify-content: space-between;
+  &:hover {
+    cursor: pointer;
+  }
   @media (max-width: 1150px) {
     width: 25px;
     padding: 0;
@@ -133,7 +139,7 @@
   top: 0;
   left: 0;
   width: 100vw;
-  height: 2400px;
+  //height: 2400px;
   background-color: $color-footer;
   opacity: 0.7;
   z-index: 2;

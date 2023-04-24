@@ -12,6 +12,9 @@
   width: 284px;
   height: 392px;
   border-bottom: 1px solid $color-grey;
+  &:hover {
+    cursor: pointer;
+  }
   @media (min-width: 375px) and (max-width: 1900px) {
     width: calc(156px + 128 * (100vw - 620px) / 1525);
     height: calc(290px + 122 * (100vw - 620px) / 1525);
@@ -53,6 +56,9 @@
   border: none;
   font-size: 25px;
   font-weight: 500;
+  &:hover {
+    cursor: pointer;
+  }
   @media (min-width: 375px) and (max-width: 1900px) {
     width: calc(40px + 40 * (100vw - 620px) / 1525);
     height: calc(24px + 8 * (100vw - 620px) / 1525);

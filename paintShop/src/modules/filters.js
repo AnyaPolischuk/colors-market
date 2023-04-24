@@ -3,6 +3,8 @@ import { renderProductCards } from "./renderProducts";
 import { products } from "../products";
 import { sortProductsBy, sortingSelectedOption } from "./sorting";
 import { addProductToBasket } from "./basket";
+import { body, html } from "./burger";
+import { bodyOfPage } from "./basket";
 
 const filterBtn = document.querySelector('.products-sorting__btn');
 const filterList = document.querySelector('.products-filter');
@@ -12,13 +14,18 @@ export let filteredProducts;
 let notFilteredProducts;
 
 export function openAndCloseFilterList() {
+  const heightOfPage = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+
   filterBtn.addEventListener('click', () => {
     filterList.classList.add('products-filter_active');
     backgroundDark.classList.add('header__cover_active');
+    bodyOfPage.classList.add('body_noscroll');
+    backgroundDark.style.height = `${heightOfPage}px`;
   })
   filterCloseBtn.addEventListener('click', () => {
     filterList.classList.remove('products-filter_active');
     backgroundDark.classList.remove('header__cover_active');
+    bodyOfPage.classList.remove('body_noscroll');
   })
 }
 
